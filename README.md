@@ -1,7 +1,7 @@
 # Knife::Reporter
 
-A knife plugin for generating reports in various formats and gathering
-information from the Chef API via knife.
+A knife plugin for gathering and reporting data about nodes, and the chef
+environment, in various formats.
 
 ## Installation
 
