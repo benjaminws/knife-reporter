@@ -5,7 +5,7 @@ class Chef
     class ReporterRst < Knife
       include Knife::ReporterBase
 
-      attr_accessor :nodes, :hostname_size, :uptime_size, :memory_size, :runlist_size
+      attr_accessor :nodes, :hostname_size, :memory_size, :runlist_size
       banner 'knife reporter rst'
 
       option :output_file,
@@ -44,15 +44,15 @@ class Chef
       end
 
       def table_row_seperator
-        "+#{'-' * (hostname_size+2)}+#{'-' * (uptime_size+2)}+#{'-' * (memory_size+2)}+#{'-' * (runlist_size+2)}+"
+        "+#{'-' * (hostname_size+2)}+#{'-' * (memory_size+2)}+#{'-' * (runlist_size+2)}+"
       end
 
       def terminate_header_row
-        "+#{'=' * (hostname_size+2)}+#{'=' * (uptime_size+2)}+#{'=' * (memory_size+2)}+#{'=' * (runlist_size+2)}+"
+        "+#{'=' * (hostname_size+2)}+#{'=' * (memory_size+2)}+#{'=' * (runlist_size+2)}+"
       end
 
       def table_heading
-        sprintf("| %-#{hostname_size}s | %-#{uptime_size}s | %-#{memory_size}s | %-#{runlist_size}s |", "Host Name", "Uptime", "Memory", "Run List")
+        sprintf("| %-#{hostname_size}s | %-#{memory_size}s | %-#{runlist_size}s |", "Host Name", "Memory", "Run List")
       end
 
       def runlist_size
@@ -63,16 +63,12 @@ class Chef
         @memory_size ||= Knife::ReporterHelper.extract_longest_string_from(nodes.map { |node| (node.memory.total.to_i/1024).to_s })+2
       end
 
-      def uptime_size
-        @uptime_size ||= Knife::ReporterHelper.extract_longest_string_from(nodes.map { |node| node.uptime })+2
-      end
-
       def hostname_size
         @hostname_size ||= Knife::ReporterHelper.extract_longest_string_from(nodes.map { |node| node.name })+2
       end
 
       def node_row_for(node)
-        sprintf("| %-#{hostname_size}s | %-#{uptime_size}s | %-#{memory_size}s | %-#{runlist_size}s |", node.name, node.uptime, "#{node.memory.total.to_i/1024}MB", node.run_list)
+        sprintf("| %-#{hostname_size}s | %-#{memory_size}s | %-#{runlist_size}s |", node.name, "#{node.memory.total.to_i/1024}MB", node.run_list)
       end
     end
   end
