@@ -1,5 +1,4 @@
 require 'chef/knife/reporter_base'
-require 'pandoc-ruby'
 
 class Chef
   class Knife
