@@ -20,6 +20,8 @@ Or install it yourself as:
 ## Usage
 
     $ knife reporter cli
+    $ knife reporter rst
+        -o, --outfile FILE               File to write the report to
 
 ## Contributing
 
