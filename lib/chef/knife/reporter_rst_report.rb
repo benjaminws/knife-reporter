@@ -22,8 +22,8 @@ class Chef
         output_file = config[:output_file]
 
         node_table = []
-        node_table << "Nodes currently deployed that are managed by chef"
-        node_table << "=================================================\n"
+        node_table << "Nodes deployed & managed by chef"
+        node_table << "================================\n"
         node_table << table_row_seperator
         node_table << table_heading
         node_table << terminate_header_row
