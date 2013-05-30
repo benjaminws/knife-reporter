@@ -19,8 +19,8 @@ Or install it yourself as:
 
 ## Usage
 
-    $ knife reporter cli
-    $ knife reporter rst
+    $ knife reporter nodes cli
+    $ knife reporter nodes rst
         -o, --outfile FILE               File to write the report to
 
 ## Contributing

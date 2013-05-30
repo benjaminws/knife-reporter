@@ -2,11 +2,11 @@ require 'chef/knife/reporter_base'
 
 class Chef
   class Knife
-    class ReporterRst < Knife
+    class ReporterNodesRst < Knife
       include Knife::ReporterBase
 
       attr_accessor :nodes, :hostname_size, :memory_size, :runlist_size
-      banner 'knife reporter rst'
+      banner 'knife reporter nodes rst'
 
       option :output_file,
         :short => "-o FILE",

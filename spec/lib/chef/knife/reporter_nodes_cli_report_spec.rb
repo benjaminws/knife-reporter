@@ -1,7 +1,7 @@
 require 'ostruct'
 require_relative('../../../spec_helper')
 
-describe Chef::Knife::ReporterCli do
+describe Chef::Knife::ReporterNodesCli do
 
   before(:each) do
     subject.stub(:printf)
@@ -15,7 +15,7 @@ describe Chef::Knife::ReporterCli do
         subject.stub(:report_nodes)
       end
 
-      it "call Knife::ReporterCli.report_nodes" do
+      it "call Chef::Knife::ReporterNodesCli.report_nodes" do
         subject.should_receive(:report_nodes).once
         subject.run
       end

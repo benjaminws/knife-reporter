@@ -2,10 +2,10 @@ require 'chef/knife/reporter_base'
 
 class Chef
   class Knife
-    class ReporterCli < Knife
+    class ReporterNodesCli < Knife
       include Knife::ReporterBase
 
-      banner 'knife reporter cli'
+      banner 'knife reporter nodes cli'
 
       def run
         report_nodes if @name_args[0].nil?
