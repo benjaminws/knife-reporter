@@ -19,9 +19,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Report on nodes
     $ knife reporter nodes cli
     $ knife reporter nodes rst
         -o, --outfile FILE               File to write the report to
+
+### Report on roles
+    $ knife reporter roles cli
+    $ knife reporter roles rst
+        -o, --outfile FILE               File to write the report to
+
 
 ## Contributing
 
