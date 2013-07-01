@@ -37,10 +37,9 @@ describe Chef::Knife::ReporterNodesCli do
         subject.report_nodes
       end
 
-      it "request the longest string to calculate formatting 3 times" do
+      it "request the longest string to calculate formatting 2 times" do
         helpers.stub(:extract_longest_string_from)
         helpers.should_receive(:extract_longest_string_from).once.and_return(11)
-        helpers.should_receive(:extract_longest_string_from).once.and_return(69)
         helpers.should_receive(:extract_longest_string_from).once.and_return(3)
         subject.report_nodes
       end
